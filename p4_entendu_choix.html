@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Titre de la page</title>
+</head>
+<body>
+0 = pas de jeton ou un jeton adverse</br>
+1 = un jeton à nous
+        <TABLE style = "table-layout: auto;width: 180px;">
+            <TR><TD><input type='text' id='i00' value='0' style="width:20px"/></TD>
+                <TD></TD>
+                <TD></TD>
+                <TD></TD>
+                <TD></TD>
+                <TD></TD>
+                <TD><input type='text' id='i06' value='0' style="width:20px"/></TD>
+            </TR>
+            <TR><TD></TD>
+                <TD><input type='text' id='i11' value='0' style="width:20px"/></TD>
+                <TD></TD>
+                <TD>
+                    <!-- <input type='text' id='i13' value='0' style="width:20px"/> -->
+                </TD>
+                <TD></TD>
+                <TD><input type='text' id='i15' value='0' style="width:20px"/></TD>
+                <TD></TD>
+            </TR>
+            <TR><TD></TD>
+                <TD></TD>
+                <TD><input type='text' id='i22' value='0' style="width:20px"/></TD>
+                <TD>
+                    <!-- <input type='text' id='i23' value='0' style="width:20px"/> -->
+                </TD>
+                <TD><input type='text' id='i24' value='0' style="width:20px"/></TD>
+                <TD></TD>
+                <TD></TD>
+            </TR>
+            <TR><TD><input type='text' id='i30' value='0' style="width:20px"/></TD>
+                <TD><input type='text' id='i31' value='0' style="width:20px"/></TD>
+                <TD><input type='text' id='i32' value='0' style="width:20px"/></TD>
+                <TD><input type='text' id='i33' value='1' style="background-color: yellow;width:20px"  disabled/></TD>
+                <TD><input type='text' id='i34' value='0' style="width:20px"/></TD>
+                <TD><input type='text' id='i35' value='0' style="width:20px"/></TD>
+                <TD><input type='text' id='i36' value='0' style="width:20px"/></TD>
+            </TR>
+            <TR><TD></TD>
+                <TD></TD>
+                <TD><input type='text' id='i42' value='0' style="width:20px"/></TD>
+                <TD><input type='text' id='i43' value='0' style="width:20px"/></TD>
+                <TD><input type='text' id='i44' value='0' style="width:20px"/></TD>
+                <TD></TD>
+                <TD></TD>
+            </TR>
+            <TR><TD></TD>
+                <TD><input type='text' id='i51' value='0' style="width:20px"/></TD>
+                <TD></TD>
+                <TD><input type='text' id='i53' value='0' style="width:20px"/></TD>
+                <TD></TD>
+                <TD><input type='text' id='i55' value='0' style="width:20px"/></TD>
+                <TD></TD>
+            </TR>
+            <TR><TD><input type='text' id='i60' value='0' style="width:20px"/></TD>
+                <TD></TD>
+                <TD></TD>
+                <TD><input type='text' id='i63' value='0' style="width:20px"/></TD>
+                <TD></TD>
+                <TD></TD>
+                <TD><input type='text' id='i66' value='0' style="width:20px"/></TD>
+            </TR>
+
+            </TABLE>
+
+
+
+<button onclick="tt()">Click me</button><button onclick="reset()">reset</button> <div id="ret">  </div>
+
+result = hor, ver, diag1, diag2
+
+<TABLE style = "table-layout: auto;width: 180px;">
+    <TR><TD><button type='text' id='li00' value='0' onclick="change('i00')">A</button></TD>
+        <TD></TD>
+        <TD></TD>
+        <TD></TD>
+        <TD></TD>
+        <TD></TD>
+        <TD><button type='text' id='li06' value='0' onclick="change('i06')">A</button></TD>
+    </TR>
+    <TR><TD></TD>
+        <TD><button type='text' id='li11' value='0' onclick="change('i11')">A</button></TD>
+        <TD></TD>
+        <TD>
+            <!-- <button type='text' id='li13' value='0' onclick="change('i13')">A</button> -->
+        </TD>
+        <TD></TD>
+        <TD><button type='text' id='li15' value='0' onclick="change('i15')">A</button> </TD>
+        <TD></TD>
+    </TR>
+    <TR><TD></TD>
+        <TD></TD>
+        <TD><button type='text' id='li22' value='0' onclick="change('i22')">A</button></TD>
+        <TD>
+            <!-- <button type='text' id='li23' value='0' onclick="change('i23')">A</button> -->
+        </TD>
+        <TD><button type='text' id='li24' value='0' onclick="change('i24')">A</button></TD>
+        <TD></TD>
+        <TD></TD>
+    </TR>
+    <TR><TD><button type='text' id='li30' value='0' onclick="change('i30')">A</button></TD>
+        <TD><button type='text' id='li31' value='0' onclick="change('i31')">A</button></TD>
+        <TD><button type='text' id='li32' value='0' onclick="change('i32')">A</button></TD>
+        <TD><button type='text' id='li33' value='1' style="background-color: yellow; "  disabled>A</button></TD>
+        <TD><button type='text' id='li34' value='0' onclick="change('i34')">A</button></TD>
+        <TD><button type='text' id='li35' value='0' onclick="change('i35')">A</button></TD>
+        <TD><button type='text' id='li36' value='0' onclick="change('i36')">A</button></TD>
+    </TR>
+    <TR><TD></TD>
+        <TD></TD>
+        <TD><button type='text' id='li42' value='0' onclick="change('i42')">A</button></TD>
+        <TD><button type='text' id='li43' value='0' onclick="change('i43')">A</button></TD>
+        <TD><button type='text' id='li44' value='0' onclick="change('i44')">A</button></TD>
+        <TD></TD>
+        <TD></TD>
+    </TR>
+    <TR><TD></TD>
+        <TD><button type='text' id='li51' value='0' onclick="change('i51')">A</button></TD>
+        <TD></TD>
+        <TD><button type='text' id='li53' value='0' onclick="change('i53')">A</button></TD>
+        <TD></TD>
+        <TD><button type='text' id='li55' value='0' onclick="change('i55')">A</button></TD>
+        <TD></TD>
+    </TR>
+    <TR><TD><button type='text' id='li60' value='0' onclick="change('i60')">A</button></TD>
+        <TD></TD>
+        <TD></TD>
+        <TD><button type='text' id='li63' value='0' onclick="change('i63')">A</button></TD>
+        <TD></TD>
+        <TD></TD>
+        <TD><button type='text' id='li66' value='0' onclick="change('i66')">A</button></TD>
+    </TR>
+
+    </TABLE>
+</body>
+
+<script>
+
+  function reset(){
+    var ti00 = document.getElementById('i00');ti00.value = 0;
+    var ti11 = document.getElementById('i11');ti11.value = 0;
+    var ti22 = document.getElementById('i22');ti22.value = 0;
+    var ti24 = document.getElementById('i24');ti24.value = 0;
+    var ti15 = document.getElementById('i15');ti15.value = 0;
+    var ti06 = document.getElementById('i06');ti06.value = 0;
+    var ti36 = document.getElementById('i36');ti36.value = 0;
+    var ti35 = document.getElementById('i35');ti35.value = 0;
+    var ti34 = document.getElementById('i34');ti34.value = 0;
+    var ti32 = document.getElementById('i32');ti32.value = 0;
+    var ti31 = document.getElementById('i31');ti31.value = 0;
+    var ti30 = document.getElementById('i30');ti30.value = 0;
+    var ti60 = document.getElementById('i60');ti60.value = 0;
+    var ti51 = document.getElementById('i51');ti51.value = 0;
+    var ti42 = document.getElementById('i42');ti42.value = 0;
+    var ti43 = document.getElementById('i43');ti43.value = 0;
+    var ti53 = document.getElementById('i53');ti53.value = 0;
+    var ti63 = document.getElementById('i63');ti63.value = 0;
+    var ti44 = document.getElementById('i44');ti44.value = 0;
+    var ti55 = document.getElementById('i55');ti55.value = 0;
+    var ti66 = document.getElementById('i66');ti66.value = 0;
+  }
+
+  function change(id){
+    var t = document.getElementById(id)
+    t.value = 1
+  }
+
+  function recherche(tab){
+      var Imid = 3
+      var Ymid = 3
+      var totalVert = 0
+      var totalHor = 0
+      var totalDiag1 = 0 // sens /
+      var totalDiag2 = 0 // sens \
+      //VERTICAL
+      //search bottom
+      if(tab[Ymid+1][Imid] === 1){
+          totalVert+=1
+          if(tab[Ymid+2][Imid] === 1){
+              totalVert+=1
+              if(tab[Ymid+3][Imid] === 1){
+                  totalVert+=1
+              }
+          }
+      }
+      //HORIZONTAL
+      //search left
+      if(tab[Ymid][Imid-1] === 1){
+          totalHor+=1
+          if(tab[Ymid][Imid-2] === 1){
+              totalHor+=1
+              if(tab[Ymid][Imid-3] === 1){
+                  totalHor+=1
+              }
+          }
+      }
+      //search right
+      if(tab[Ymid][Imid+1] === 1){
+          totalHor+=1
+          if(tab[Ymid][Imid+2] === 1){
+              totalHor+=1
+              if(tab[Ymid][Imid+3] === 1){
+                  totalHor+=1
+              }
+          }
+      }
+      //DIAGONAL /
+      //search right
+      if(tab[Ymid+1][Imid-1] === 1){
+          totalDiag1+=1
+          if(tab[Ymid+2][Imid-2] === 1){
+              totalDiag1+=1
+              if(tab[Ymid+3][Imid-3] === 1){
+                  totalDiag1+=1
+              }
+          }
+      }
+      //search left
+      if(tab[Ymid-1][Imid+1] === 1){
+          totalDiag1+=1
+          if(tab[Ymid-2][Imid+2] === 1){
+              totalDiag1+=1
+              if(tab[Ymid-3][Imid+3] === 1){
+                  totalDiag1+=1
+              }
+          }
+      }
+      //DIAGONAL \
+      //search left
+      if(tab[Ymid-1][Imid-1] === 1){
+          totalDiag2+=1
+          if(tab[Ymid-2][Imid-2] === 1){
+              totalDiag2+=1
+              if(tab[Ymid-3][Imid-3] === 1){
+                  totalDiag2+=1
+              }
+          }
+      }
+      //search right
+      if(tab[Ymid+1][Imid+1] === 1){
+          totalDiag2+=1
+          if(tab[Ymid+2][Imid+2] === 1){
+              totalDiag2+=1
+              if(tab[Ymid+3][Imid+3] === 1){
+                  totalDiag2+=1
+              }
+          }
+      }
+      return [totalHor, totalVert, totalDiag1, totalDiag2];
+  }
+
+  function playToWin(p){
+  for(var i = 0; i<4;i++){
+  	if(p[i]>=3){
+    return true;
+    }
+  }
+  return false;
+  }
+
+  function evaluation(p){
+    var hor = p[0];
+    var ver = p[1]
+    var diag1 = p[2];
+    var diag2 = p[3];
+    return hor+ver+diag1+diag2
+  }
+
+  function tt(){
+    var rr = document.getElementById("ret")
+    var i00=parseInt(document.getElementById('i00').value,10)
+    var i01=-1;var i02=-1;var i03=-1;var i04=-1;var i05=-1;
+    var i06=parseInt(document.getElementById('i06').value,10)
+    var i10=-1
+    var i11=parseInt(document.getElementById('i11').value,10)
+    var i12=-1
+    var i13=-1
+    var i14=-1
+    var i15=parseInt(document.getElementById('i15').value,10)
+    var i16=-1
+    var i20=-1
+    var i21=-1
+    var i22=parseInt(document.getElementById('i22').value,10)
+    var i23=-1
+    var i24=parseInt(document.getElementById('i24').value,10)
+    var i25=-1
+    var i26=-1
+    var i30=parseInt(document.getElementById('i30').value,10)
+    var i31=parseInt(document.getElementById('i31').value,10)
+    var i32=parseInt(document.getElementById('i32').value,10)
+    var i33=parseInt(document.getElementById('i33').value,10)
+    var i34=parseInt(document.getElementById('i34').value,10)
+    var i35=parseInt(document.getElementById('i35').value,10)
+    var i36=parseInt(document.getElementById('i36').value,10)
+    var i40=-1
+    var i41=-1
+    var i42=parseInt(document.getElementById('i42').value,10)
+    var i43=parseInt(document.getElementById('i43').value,10)
+    var i44=parseInt(document.getElementById('i44').value,10)
+    var i45=-1
+    var i46=-1
+    var i50=-1
+    var i51=parseInt(document.getElementById('i51').value,10)
+    var i52=-1
+    var i53=parseInt(document.getElementById('i53').value,10)
+    var i54=-1
+    var i55=parseInt(document.getElementById('i55').value,10)
+    var i56=-1
+    var i60=parseInt(document.getElementById('i60').value,10)
+    var i61=-1
+    var i62=-1
+    var i63=parseInt(document.getElementById('i63').value,10)
+    var i64=-1
+    var i65=-1
+    var i66=parseInt(document.getElementById('i66').value,10)
+    var p = [[i00,i01,i02,i03,i04,i05,i06],[i10,i11,i12,i13,i14,i15,i16],[i20,i21,i22,i23,i24,i25,i26],[i30,i31,i32,i33,i34,i35,i36],[i40,i41,i42,i43,i44,i45,i46],[i50,i51,i52,i53,i54,i55,i56],[i60,i61,i62,i63,i64,i65,i66]]
+    var tt = p[0][1]
+    rr.innerHTML = recherche(p) +" eval: "+ evaluation(recherche(p)) + " play to win?: "+playToWin(recherche(p))
+  }
+
+
+</script>
+</html>
