@@ -1,0 +1,240 @@
+<!-- v2 de recherche de puissance local etendu -->
+
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Titre de la page</title>
+</head>
+<body>
+0 = pas de jeton ou un jeton adverse</br>
+1 = un jeton à nous
+        <TABLE style = "table-layout: auto;width: 180px;">
+            <TR><TD><input type='text' id='i00' value='0' style="width:20px"/></TD>
+                <TD></TD>
+                <TD></TD>
+                <TD></TD>
+                <TD></TD>
+                <TD></TD>
+                <TD><input type='text' id='i06' value='0' style="width:20px"/></TD>
+            </TR>
+            <TR><TD></TD>
+                <TD><input type='text' id='i11' value='0' style="width:20px"/></TD>
+                <TD></TD>
+                <TD>
+                    <!-- <input type='text' id='i13' value='0' style="width:20px"/> -->
+                </TD>
+                <TD></TD>
+                <TD><input type='text' id='i15' value='0' style="width:20px"/></TD>
+                <TD></TD>
+            </TR>
+            <TR><TD></TD>
+                <TD></TD>
+                <TD><input type='text' id='i22' value='0' style="width:20px"/></TD>
+                <TD>
+                    <!-- <input type='text' id='i23' value='0' style="width:20px"/> -->
+                </TD>
+                <TD><input type='text' id='i24' value='0' style="width:20px"/></TD>
+                <TD></TD>
+                <TD></TD>
+            </TR>
+            <TR><TD><input type='text' id='i30' value='0' style="width:20px"/></TD>
+                <TD><input type='text' id='i31' value='0' style="width:20px"/></TD>
+                <TD><input type='text' id='i32' value='0' style="width:20px"/></TD>
+                <TD><input type='text' id='i33' value='1' style="background-color: yellow;width:20px"/></TD>
+                <TD><input type='text' id='i34' value='0' style="width:20px"/></TD>
+                <TD><input type='text' id='i35' value='0' style="width:20px"/></TD>
+                <TD><input type='text' id='i36' value='0' style="width:20px"/></TD>
+            </TR>
+            <TR><TD></TD>
+                <TD></TD>
+                <TD><input type='text' id='i42' value='0' style="width:20px"/></TD>
+                <TD><input type='text' id='i43' value='0' style="width:20px"/></TD>
+                <TD><input type='text' id='i44' value='0' style="width:20px"/></TD>
+                <TD></TD>
+                <TD></TD>
+            </TR>
+            <TR><TD></TD>
+                <TD><input type='text' id='i51' value='0' style="width:20px"/></TD>
+                <TD></TD>
+                <TD><input type='text' id='i53' value='0' style="width:20px"/></TD>
+                <TD></TD>
+                <TD><input type='text' id='i55' value='0' style="width:20px"/></TD>
+                <TD></TD>
+            </TR>
+            <TR><TD><input type='text' id='i60' value='0' style="width:20px"/></TD>
+                <TD></TD>
+                <TD></TD>
+                <TD><input type='text' id='i63' value='0' style="width:20px"/></TD>
+                <TD></TD>
+                <TD></TD>
+                <TD><input type='text' id='i66' value='0' style="width:20px"/></TD>
+            </TR>
+
+            </TABLE>
+
+
+<button onclick="tt()">Click me</button> <div id="ret">  </div> 
+
+result = hor, ver, diag1, diag2
+
+
+</body>
+
+
+<script>
+
+
+function recherche(tab){
+
+    var Imid = 3
+    var Ymid = 3
+
+    var totalVert = 0
+    var totalHor = 0
+    var totalDiag1 = 0 // sens /
+    var totalDiag2 = 0 // sens \
+    //VERTICAL
+    //search bottom
+    if(tab[Ymid+1][Imid] === 1){
+        totalVert+=1
+        if(tab[Ymid+2][Imid] === 1){
+            totalVert+=1
+            if(tab[Ymid+3][Imid] === 1){
+                totalVert+=1
+            }
+        }
+    }
+
+    //HORIZONTAL
+    //search left
+    if(tab[Ymid][Imid-1] === 1){
+        totalHor+=1
+        if(tab[Ymid][Imid-2] === 1){
+            totalHor+=1
+            if(tab[Ymid][Imid-3] === 1){
+                totalHor+=1
+            }
+        }
+    }
+    //search right
+    if(tab[Ymid][Imid+1] === 1){
+        totalHor+=1
+        if(tab[Ymid][Imid+2] === 1){
+            totalHor+=1
+            if(tab[Ymid][Imid+3] === 1){
+                totalHor+=1
+            }
+        }
+    }
+
+    //DIAGONAL /
+    //search right
+    if(tab[Ymid+1][Imid-1] === 1){
+        totalDiag1+=1
+        if(tab[Ymid+2][Imid-2] === 1){
+            totalDiag1+=1
+            if(tab[Ymid+3][Imid-3] === 1){
+                totalDiag1+=1
+            }
+        }
+    }
+    //search left
+    if(tab[Ymid-1][Imid+1] === 1){
+        totalDiag1+=1
+        if(tab[Ymid-2][Imid+2] === 1){
+            totalDiag1+=1
+            if(tab[Ymid-3][Imid+3] === 1){
+                totalDiag1+=1
+            }
+        }
+    }
+
+    //DIAGONAL \
+    //search left
+    if(tab[Ymid-1][Imid-1] === 1){
+        totalDiag2+=1
+        if(tab[Ymid-2][Imid-2] === 1){
+            totalDiag2+=1
+            if(tab[Ymid-3][Imid-3] === 1){
+                totalDiag2+=1
+            }
+        }
+    }
+    //search right
+    if(tab[Ymid+1][Imid+1] === 1){
+        totalDiag2+=1
+        if(tab[Ymid+2][Imid+2] === 1){
+            totalDiag2+=1
+            if(tab[Ymid+3][Imid+3] === 1){
+                totalDiag2+=1
+            }
+        }
+    }
+    return [totalHor, totalVert, totalDiag1, totalDiag2];
+}
+
+function tt(){
+
+var rr = document.getElementById("ret")
+var i00=parseInt(document.getElementById('i00').value,10)
+var i01=-1;var i02=-1;var i03=-1;var i04=-1;var i05=-1;
+var i06=parseInt(document.getElementById('i06').value,10)
+
+var i10=-1
+var i11=parseInt(document.getElementById('i11').value,10)
+var i12=-1
+var i13=-1
+var i14=-1
+var i15=parseInt(document.getElementById('i15').value,10)
+var i16=-1
+
+var i20=-1
+var i21=-1
+var i22=parseInt(document.getElementById('i22').value,10)
+var i23=-1
+var i24=parseInt(document.getElementById('i24').value,10)
+var i25=-1
+var i26=-1
+
+var i30=parseInt(document.getElementById('i30').value,10)
+var i31=parseInt(document.getElementById('i31').value,10)
+var i32=parseInt(document.getElementById('i32').value,10)
+var i33=parseInt(document.getElementById('i33').value,10)
+var i34=parseInt(document.getElementById('i34').value,10)
+var i35=parseInt(document.getElementById('i35').value,10)
+var i36=parseInt(document.getElementById('i36').value,10)
+
+var i40=-1
+var i41=-1
+var i42=parseInt(document.getElementById('i42').value,10)
+var i43=parseInt(document.getElementById('i43').value,10)
+var i44=parseInt(document.getElementById('i44').value,10)
+var i45=-1
+var i46=-1
+
+var i50=-1
+var i51=parseInt(document.getElementById('i51').value,10)
+var i52=-1
+var i53=parseInt(document.getElementById('i53').value,10)
+var i54=-1
+var i55=parseInt(document.getElementById('i55').value,10)
+var i56=-1
+
+var i60=parseInt(document.getElementById('i60').value,10)
+var i61=-1
+var i62=-1
+var i63=parseInt(document.getElementById('i63').value,10)
+var i64=-1
+var i65=-1
+var i66=parseInt(document.getElementById('i66').value,10)
+var p = [[i00,i01,i02,i03,i04,i05,i06],[i10,i11,i12,i13,i14,i15,i16],[i20,i21,i22,i23,i24,i25,i26],[i30,i31,i32,i33,i34,i35,i36],[i40,i41,i42,i43,i44,i45,i46],[i50,i51,i52,i53,i54,i55,i56],[i60,i61,i62,i63,i64,i65,i66]]
+
+var tt = p[0][1]
+
+rr.innerHTML = recherche(p)
+
+}
+
+</script>
+</html>
